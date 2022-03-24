@@ -14,9 +14,10 @@ for <%= @room.capacity %> people
 <h2>price <%= number_to_euros(@room.price_per_night.to_i / 100) %></h2>
 
 <%= simple_form_for [@room, @booking] do |f| %>
-  <%= f.input :starts_at, as: :date %>
-  <%= f.input :ends_at, as: :date %>
+  <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.submit %>
 <% end %>
+
 
 <%= link_to 'back', rooms_path %>

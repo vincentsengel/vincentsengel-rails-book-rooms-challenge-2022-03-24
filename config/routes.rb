@@ -1,6 +1,8 @@
+
 Rails.application.routes.draw do
+  get 'rooms/index'
+  get 'rooms/show'
   devise_for :users
   root to: 'pages#home'
-  # ressources :hotels only: []
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :rooms, only: [ :index, :show ]
 end

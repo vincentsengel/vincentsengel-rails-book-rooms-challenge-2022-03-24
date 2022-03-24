@@ -1,2 +1,16 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<h1>Room </h1>
+
+
+<h1>
+  <%= @room.hotel.name %>
+</h1>
+<p>
+  <%= @room.hotel.address %>
+</p>
+
+
+for <%= @room.capacity %> people
+
+<h2>price <%= number_to_euros(@room.price_per_night.to_i / 100) %></h2>
+
+<%= link_to 'back', rooms_path %>

@@ -9,7 +9,7 @@ require "faker"
 
 hotel_name = []
 
-20.times do
+7.times do
   hotel_name << "#{Faker::Creature::Animal.name.capitalize} Hotel"
 end
 
@@ -18,7 +18,7 @@ hotel_name.uniq.each do |hotel|
   puts "#{Hotel.last.name} created"
 end
 
-130.times do
-  Room.new(price_per_night: (rand(39..189) * 10), capacity: rand(2..8), hotel_id: Hotel.all.sample().id).save
+18.times do
+  Room.new(price_per_night: (rand(399..1899) * 10), capacity: rand(2..8), hotel_id: Hotel.all.sample().id).save
   puts "new room created in #{Room.last.hotel.name}"
 end

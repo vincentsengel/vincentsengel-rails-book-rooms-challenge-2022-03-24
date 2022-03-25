@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.banner {
+  margin: 0;
+  background-image: url('https://res.cloudinary.com/dngfqo2nf/image/upload/v1648200164/Certif_LeWagon_801/Home_2_trkayo.jpg');
+  background-size: cover;
+  background-position: bottom;
+  height: calc(100vh - 56px);
+}
+
+.text-on-home {
+  background-color: rgba(240, 248, 255, 0.664);
+  padding: 24px;
+}

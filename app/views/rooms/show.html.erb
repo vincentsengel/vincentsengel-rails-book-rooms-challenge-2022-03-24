@@ -1,23 +1,32 @@
-<h1>Room </h1>
+<div class="container">
 
+  <div class="d-flex justify-content-between">
+    <div class="m-4">
+      <h1>A room in <%= @room.hotel.name %> </h1>
+      <p>
+        <%= @room.hotel.address %>
+      </p>
 
-<h1>
-  <%= @room.hotel.name %>
-</h1>
-<p>
-  <%= @room.hotel.address %>
-</p>
+    </div>
 
+    <div>
+      <div class="card m-4" style="width: 18rem;">
+        <img src="https://fakeimg.pl/286x300" alt="">
+        <div class="card-body">
+          <h5 class="card-title">price only <%= number_to_euros(@room.price_per_night.to_i / 100) %> </h5>
+          <h6 class="card-subtitle mb-2 text-muted">per night</h6>
+          <p class="card-text mb-3">for <%= @room.capacity %> people</p>
+          <div class="mt5">
+            <%= simple_form_for [@room, @booking] do |f| %>
+              <%= f.input :starts_at, label: 'pick your dates', as: :string, required: false, input_html: {class: "datepicker"} %>
+              <%= f.button :submit, "Book this room !", class: "btn-secondary btn-lg mt-2" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-for <%= @room.capacity %> people
+  <%= link_to 'back to list', rooms_path, class: 'btn btn-light' %>
 
-<h2>price <%= number_to_euros(@room.price_per_night.to_i / 100) %></h2>
-
-<%= simple_form_for [@room, @booking] do |f| %>
-  <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.submit %>
-<% end %>
-
-
-<%= link_to 'back', rooms_path %>
+</div>

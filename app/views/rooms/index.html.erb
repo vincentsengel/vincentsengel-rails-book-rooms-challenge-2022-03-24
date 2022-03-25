@@ -1,9 +1,13 @@
-<h1>Rooms index</h1>
+<div class="container">
 
-<ul>
-  <% @rooms.each do |room| %>
-    <li>
-      <%= link_to "#{room.hotel.name} - room for #{room.capacity} people, that costs #{number_to_euros(room.price_per_night.to_i / 100)} per night", room_path(room) %>
-    </li>
-  <% end %>
-</ul>
+  <h1>Rooms index</h1>
+
+  <ul>
+    <% @rooms.each do |room| %>
+      <li>
+        <%= link_to "#{room.hotel.name} - room for #{room.capacity} people, that costs #{number_to_euros(room.price_per_night.to_i / 100)} per night", room_path(room) %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>

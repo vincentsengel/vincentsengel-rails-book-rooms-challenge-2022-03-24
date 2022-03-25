@@ -7,8 +7,4 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @booking = Booking.new
   end
-
-  def create
-    raise
-  end
 end

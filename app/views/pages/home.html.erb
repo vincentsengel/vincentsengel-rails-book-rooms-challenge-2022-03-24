@@ -1,8 +1,12 @@
-<div class="container">
+<div class="banner position-relative">
 
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
 
-  <%= link_to 'see our rooms !', rooms_path %>
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <div class='text-on-home'>
+        <h1>Travelling in Europe for the weekend ?</h1>
+        <p>We've got the best hotel room prices aroud ...</p>
+        <%= link_to 'checkout our rooms !', rooms_path, class: 'btn btn-light' %>
+      </div>
+    </div>
 
 </div>

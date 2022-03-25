@@ -13,6 +13,7 @@
             <div class="card-body">
               <p class="card-title"><%= room.hotel.name %></p>
               <h4> only <%= number_to_euros(room.price_per_night.to_i / 100) %></h4>
+              <p> for <%= room.capacity %> people</p>
             </div>
           </div>
         <% end %>
